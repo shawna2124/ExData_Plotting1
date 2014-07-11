@@ -11,3 +11,6 @@ data2$DateTime <- strptime(paste(data2$Date, data2$Time, sep=" "),format="%d/%m/
 plot1 <- with(data2, hist(Global_active_power, xlab="Global Active Power (kilowatts)",
               ylab="Frequency", main="Global Active Power", col="red"))
 
+#Print Plot 1 to a PNG file
+dev.copy(png, file = "plot1.png") #Copy my plot to a PNG file
+dev.off() 
