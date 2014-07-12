@@ -11,6 +11,9 @@ data2$DateTime <- strptime(paste(data2$Date, data2$Time, sep=" "),format="%d/%m/
 #Construct Plot 3  - a multi-line chart of Energy sub metering
 #(1-kitchen, 2-laundry, 3-water heater and air condition) by day / time
 
+#Print Plot 3 to a PNG file - this time I am writing directly to the PNG rather than copying
+png(file = "plot3.png", width=480, height = 480)
+
 #Set up plot 3
 with(data2, plot(DateTime, Sub_metering_1, type = "n", xlab="", ylab="Enery sub metering"))
 with(data2, lines(DateTime, Sub_metering_1,col = "black"))
@@ -20,6 +23,4 @@ with(data2,lines(DateTime, Sub_metering_3,col = "blue"))
 # add a legend 
 legend("topright", pch = 1, col = c("black","red", "blue"), legend = c("Sub_metering_1", "Sub_metering_2","Sub_metering_3"))
 
-#Print Plot 3 to a PNG file
-dev.copy(png, file = "plot3.png") ## Copy my plot to a PNG file
 dev.off() 
