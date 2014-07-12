@@ -10,8 +10,6 @@ data2$DateTime <- strptime(paste(data2$Date, data2$Time, sep=" "),format="%d/%m/
 
 #Construct Plot 3  - a multi-line chart of Energy sub metering
 #(1-kitchen, 2-laundry, 3-water heater and air condition) by day / time
-Plot3 <- with (data2, plot(DateTime, Sub_metering_1)),xlab="WHAT", ylab="Global Active Power (kilowatts)",
-     main="SOMETHING",whatelse?)
 
 #Set up plot 3
 with(data2, plot(DateTime, Sub_metering_1, type = "n", xlab="", ylab="Enery sub metering"))
